@@ -1,0 +1,54 @@
+{
+  "users": [
+    {
+      "name": "Marcelo",
+      "cpf": "99999999999",
+      "profession": "TESTE",
+      "birthDate": "22222222",
+      "civilStatus": "SOLTEIRO",
+      "city": {
+        "value": 1500107,
+        "description": "Abaetetuba"
+      },
+      "uf": {
+        "value": 15,
+        "description": "PA"
+      },
+      "id": 1
+    },
+    {
+      "name": "CHICO",
+      "cpf": "99999999999",
+      "profession": "TI",
+      "birthDate": "06021997",
+      "civilStatus": "SOLTEIRO",
+      "city": {
+        "value": 2100204,
+        "description": "Alcântara"
+      },
+      "uf": {
+        "value": 21,
+        "description": "MA"
+      },
+      "id": 3
+    }
+  ],
+  "tarefas": [
+    {
+      "id": 1,
+      "descricao": "Configuração do ambiente",
+      "projeto": {
+        "id": 1,
+        "nome": "Alura Tracker 3.0"
+      }
+    },
+    {
+      "descricao": "Refatoração do vuex 4",
+      "projeto": {
+        "id": 1,
+        "nome": "Alura Tracker 3.0"
+      },
+      "id": 2
+    }
+  ]
+}

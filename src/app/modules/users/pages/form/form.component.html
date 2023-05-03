@@ -1,0 +1,80 @@
+<div class="container mt-5">
+    <h2>{{title}}</h2>
+    <mat-card class="mat-elevation-z8">
+        <mat-card-content>
+            <form [formGroup]="form" class="form">
+                <div class="row">
+                    <div class="col-4">
+                        <mat-form-field class="form-field">
+                            <mat-label>Nome</mat-label>
+                            <input matInput type="text" formControlName="name">
+                            <mat-error *ngIf="form.controls.name.invalid">Nome obrigatório</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-4">
+                        <mat-form-field class="form-field">
+                            <mat-label>CPF</mat-label>
+                            <input matInput type="text" formControlName="cpf" mask="000.000.000-00">
+                            <mat-error *ngIf="form.controls.cpf.invalid">CPF obrigatório</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-4">
+                        <mat-form-field class="form-field">
+                            <mat-label>Data de nascimento</mat-label>
+                            <input matInput type="text" formControlName="birthDate" mask="00/00/0000">
+                            <mat-error *ngIf="form.controls.birthDate.invalid">Data de nascimento
+                                obrigatório</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3">
+                        <mat-form-field class="form-field">
+                            <mat-label>Profissão</mat-label>
+                            <input matInput type="text" formControlName="profession">
+                            <mat-error *ngIf="form.controls.profession.invalid">Profissão obrigatório</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-3">
+                        <mat-form-field class="form-field">
+                            <mat-label>Estado civil</mat-label>
+                            <mat-select formControlName="civilStatus">
+                                <mat-option *ngFor="let status of civilStatus" [value]="status.value">
+                                    {{status.description}}
+                                </mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="form.controls.civilStatus.invalid">Estado civil obrigatório</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-3">
+                        <mat-form-field class="form-field">
+                            <mat-label>UF</mat-label>
+                            <mat-select formControlName="uf">
+                                <mat-option *ngFor="let uf of ufs | async" [value]="uf">
+                                    {{uf.description}}
+                                </mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="form.controls.uf.invalid">UF obrigatório</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-3">
+                        <mat-form-field class="form-field">
+                            <mat-label>Cidade</mat-label>
+                            <mat-select formControlName="city">
+                                <mat-option *ngFor="let city of cities | async" [value]="city">
+                                    {{city.description}}
+                                </mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="form.controls.city.invalid">Cidade obrigatório</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="mt-2">
+                    <button mat-raised-button color="primary" type="submit" class="me-2" [disabled]="form.invalid"
+                        (click)="onSubmit()">{{btn}}</button>
+                    <button mat-raised-button color="secondary" routerLink="/users/list">Cancelar</button>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "arqmedes-front"
+    }
+  },
+  "defaultProject": "arqmedes-front",
+  "cli": {
+    "analytics": "79376941-fdf8-45dc-9ad5-c4a44485ddc6"
+  }
 }
